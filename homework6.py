@@ -1,23 +1,22 @@
-def check_string(string):
-    def string_info(string):
-        nums = []
-        letters = []    
-        for symbol in string:
-            try:
-                nums.append(int(symbol))
-            except:
-                letters.append(symbol)
-        return (nums, letters)
+string = input("Enter string: ")
+only_letters = []
+sum = 0
+numbers = 0
+letters = 0
 
-    str_info = string_info(string)
-    if len(string) >= 30 and len(string)<=50:
-        print("Len string is ", len(string))
-        print("Number of nums: ", len(str_info[0]))
-        print("Number of letters: ", len(str_info[1]))
-    elif len(string) < 30:
-        print("Sum of nums: ", sum(str_info[0]))
-        print("String of letters: ", "".join(str_info[1]))
-    else:
-        print("String fail")
-
-check_string(input("Enter the string"))
+for symbol in string:
+  if symbol.isdigit():
+    sum += int(symbol)
+    numbers +=1
+  elif symbol.isalpha():
+    only_letters += symbol
+    letters += 1
+if len(string) > 30 and len(string) < 50:
+  print("Length: ", len(string))
+  print("Numbers: ", numbers)
+  print("Letters: ", letters)
+elif len(string) < 30:
+  print("Sum: ", sum)
+  print("Without numbers: ", only_letters)
+elif len(string) > 50:
+  print("Ne pridumav)))")
