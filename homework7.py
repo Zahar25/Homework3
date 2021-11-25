@@ -1,14 +1,21 @@
 #7. Калькулятор
-def calc (a, b, c):
-    if c == "+":
-        return a + b
-    elif c == "-":
-        return a - b
-    elif c == "*":
-        return a * b
-    elif c == "/":
-        return a / b
+while True:
+    s = input("Enter operation (+, -, , /): ")
+    if s == '0':
+        break
+    if s in ('+', '-', '', '/'):
+        x = float(input("First number = "))
+        y = float(input("Second number = "))
+        if s == '+':
+            print("%.2f" % (x + y))
+        elif s == '-':
+            print("%.2f" % (x - y))
+        elif s == '*':
+            print("%.2f" % (x * y))
+        elif s == '/':
+            if y != 0:
+                print("%.2f" % (x / y))
+            else:
+                print(False)
     else:
-        return "Unexpected operation! "
-result = calc(int(input("First number: ")), int(input("Second number: ")), (input("Enter operation: ")))
-print ("Result", result)
+        print("Wrong")
